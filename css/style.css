@@ -87,11 +87,6 @@ section {
 
 .header .logo {
     color: var(--main-color);
-    font-size: 2.3rem;
-}
-
-.header .logo i {
-    padding-left: .5rem;
 }
 
 .header .navbar a {
@@ -404,7 +399,7 @@ section {
     background-size: cover;
 }
 
-.book form {
+/* .book form {
     margin: 0 auto 2rem auto;
     max-width: 60rem;
     border-radius: var(--border-radius-hover);
@@ -431,7 +426,7 @@ section {
 .book form textarea {
     height: 15rem;
     resize: none;
-}
+} */
 
 .footer .box-container {
     display: grid;
@@ -505,8 +500,9 @@ section {
         font-size: 55%;
     }
 
+    /*pape adjust sini*/
     .header {
-        padding: 3rem;
+        padding: 1rem;
     }
 
     section {
@@ -587,11 +583,12 @@ section {
 
     .home .row .image img {
         height: auto;
-        width: 100%;
+        /*pape adjust sini*/
+        width: 60%;
     }
 }
 
-* {box-sizing:border-box}
+
 
 /* Slideshow container */
 .slideshow-container {
@@ -679,3 +676,4 @@ section {
   from {opacity: .4}
   to {opacity: 1}
 }
+

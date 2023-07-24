@@ -1,3 +1,19 @@
+const video = document.getElementById('video');
+const videoContainer = document.querySelector('.video-container');
+const pageContent = document.querySelector('.page-content');
+
+// Play the video automatically when the page loads
+window.addEventListener('DOMContentLoaded', () => {
+  video.play();
+});
+
+// After the video ends, show the page content and hide the video
+video.addEventListener('ended', () => {
+  videoContainer.style.opacity = 0;
+  videoContainer.style.visibility = 'hidden';
+  pageContent.classList.add('show');
+});
+
 let menu = document.querySelector('#menu-btn');
 let navbar = document.querySelector('.navbar');
 

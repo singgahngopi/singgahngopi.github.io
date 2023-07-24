@@ -7,6 +7,12 @@ window.addEventListener('DOMContentLoaded', () => {
   video.play();
 });
 
+// Play the video when it's ready and muted
+video.addEventListener('canplay', () => {
+  video.play();
+  video.muted = true;
+});
+
 // After the video ends, show the page content and hide the video
 video.addEventListener('ended', () => {
   videoContainer.style.opacity = 0;

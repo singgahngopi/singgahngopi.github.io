@@ -160,6 +160,8 @@ section {
     background: url(../image/bg2.jpg) no-repeat;
     background-position: center;
     background-size: cover;
+    /*bowoh ni*/
+    background-attachment: fixed;
 }
 
 .home .row {
@@ -303,6 +305,7 @@ section {
     background: url(../image/bg1.jpg) no-repeat;
     background-position: center;
     background-size: cover;
+    background-attachment: fixed;
 }
 
 .menu .box-container {
@@ -515,6 +518,49 @@ section {
 
 .footer .credit span {
     border-bottom: var(--border-hover);
+}
+
+/* LOCATION */
+
+.location .map-responsive{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+}
+
+.location .map-responsive iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+
+/* SOCIALS */
+
+.socials{
+    background: url(../image/bg3.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.socials .socmed{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-top: 3rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.socials .socmed blockquote {
+    flex: 1 1 15rem;
+    padding: 1.5rem;
+    text-align: center;
+    border: var(--border);
+    border-radius: var(--border-radius);
 }
 
 

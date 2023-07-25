@@ -552,7 +552,7 @@ section {
     gap: 1rem;
     padding-top: 3rem;
     justify-content: center;
-    align-items: center;
+    align-items: center top;
 }
 
 .socials .socmed blockquote {

@@ -685,6 +685,26 @@ section {
     }
 }
 
+@media (min-width:1025px){
+
+    .home{
+        background-attachment: fixed;
+    }
+
+    .menu{
+        background-attachment: fixed;
+    }
+
+    .book{
+        background-attachment: fixed;
+    }
+
+    .socials{
+        background-attachment: fixed;
+    }
+
+}
+
 
 
 /* Slideshow container */
@@ -773,4 +793,6 @@ section {
   from {opacity: .4}
   to {opacity: 1}
 }
+
+
 

@@ -1,24 +1,58 @@
 const video = document.getElementById('video');
+const videoPortrait = document.getElementById('videoPortrait');
 const videoContainer = document.querySelector('.video-container');
 const pageContent = document.querySelector('.page-content');
 
-// Play the video automatically when the page loads
-window.addEventListener('DOMContentLoaded', () => {
-  video.play();
-});
+function adjustVideoSizeBasedOnMediaQuery() {
+  const screenWidth = window.innerWidth;
+  const screenHeight = window.innerHeight;
 
-// Play the video when it's ready and muted
+  if (screenWidth >= 1281) {
+    // Play landscape video
+    videoContainer.style.display = 'block';
+    video.style.display = 'block';
+    videoPortrait.style.display = 'none';
+    video.style.width = '100vw';
+    video.style.height = '100vh';
+    video.play();
+    video.muted = true;
+  } else {
+    // Play portrait video
+    videoContainer.style.display = 'block';
+    video.style.display = 'none';
+    videoPortrait.style.display = 'block';
+    videoPortrait.style.width = '100vw';
+    videoPortrait.style.height = '100vh';
+    videoPortrait.play();
+    videoPortrait.muted = true;
+  }
+}
+
+// Play the video(s) when they are ready and muted
 video.addEventListener('canplay', () => {
   video.play();
   video.muted = true;
 });
 
-// After the video ends, show the page content and hide the video
+videoPortrait.addEventListener('canplay', () => {
+  videoPortrait.play();
+  videoPortrait.muted = true;
+});
+
+// After the video ends, show the page content and hide the video container
 video.addEventListener('ended', () => {
-  videoContainer.style.opacity = 0;
-  videoContainer.style.visibility = 'hidden';
+  videoContainer.style.display = 'none';
   pageContent.classList.add('show');
 });
+
+videoPortrait.addEventListener('ended', () => {
+  videoContainer.style.display = 'none';
+  pageContent.classList.add('show');
+});
+
+// Check screen size when the page loads and on window resize
+window.addEventListener('DOMContentLoaded', adjustVideoSizeBasedOnMediaQuery);
+window.addEventListener('resize', adjustVideoSizeBasedOnMediaQuery);
 
 let menu = document.querySelector('#menu-btn');
 let navbar = document.querySelector('.navbar');

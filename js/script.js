@@ -3,28 +3,33 @@ const videoPortrait = document.getElementById('videoPortrait');
 const videoContainer = document.querySelector('.video-container');
 const pageContent = document.querySelector('.page-content');
 
+let videoPlayed = false;
+
 function adjustVideoSizeBasedOnMediaQuery() {
   const screenWidth = window.innerWidth;
   const screenHeight = window.innerHeight;
 
-  if (screenWidth >= 1281) {
-    // Play landscape video
-    videoContainer.style.display = 'block';
-    video.style.display = 'block';
-    videoPortrait.style.display = 'none';
-    video.style.width = '100vw';
-    video.style.height = '100vh';
-    video.play();
-    video.muted = true;
-  } else {
-    // Play portrait video
-    videoContainer.style.display = 'block';
-    video.style.display = 'none';
-    videoPortrait.style.display = 'block';
-    videoPortrait.style.width = '100vw';
-    videoPortrait.style.height = '100vh';
-    videoPortrait.play();
-    videoPortrait.muted = true;
+  if (!videoPlayed){
+    if (screenWidth >= 1281) {
+      // Play landscape video
+      videoContainer.style.display = 'block';
+      video.style.display = 'block';
+      videoPortrait.style.display = 'none';
+      video.style.width = '100vw';
+      video.style.height = '100vh';
+      video.play();
+      video.muted = true;
+    } else {
+      // Play portrait video
+      videoContainer.style.display = 'block';
+      video.style.display = 'none';
+      videoPortrait.style.display = 'block';
+      videoPortrait.style.width = '100vw';
+      videoPortrait.style.height = '100vh';
+      videoPortrait.play();
+      videoPortrait.muted = true;
+    }
+    videoPlayed = true; // Mark video as played
   }
 }
 
